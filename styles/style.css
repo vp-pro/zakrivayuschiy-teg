@@ -30,8 +30,10 @@
 }
 button {
   background-color: transparent;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font);
+  cursor: pointer;
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -44,12 +46,12 @@ button {
   background-color: var(--bg-color);
   text-align: center;
   border: 2px solid currentColor;
-  padding: clamp(120px, 32dvi, 136px) 0 25px;
+  padding: clamp(120px, 32dvi, 136px) 0 22px;
   margin-block-end: 100px;
 }
 .header__title {
   font-size: clamp(3.0625rem, 2.7292rem + 1.4815vw, 4.0625rem);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font);
   font-weight: var(--title-font-weight);
   color: currentColor;
   margin-block-end: 20px;
@@ -67,6 +69,8 @@ button {
   gap: 9px;
   align-items: start;
   justify-content: center;
+  position:relative;
+  left:10px;
 }
 .theme-menu__button {
   position: relative;
@@ -75,7 +79,7 @@ button {
   font-size: 14px;
   border: none;
   transition: opacity 0.3s ease;
-  padding-block-end: 0px;
+  padding-block-end: 1px;
   text-align: left;
   text-transform: uppercase;
 }
@@ -128,7 +132,7 @@ button {
 .card__part {
   display: grid;
   gap: 25px;
-  margin-block-end: 50px;
+  margin-block-end: 58px;
 }
 
 .main__title {
@@ -137,19 +141,20 @@ button {
   text-align: left;
   padding-inline-start: 10px;
   padding-block:3px;
+  border-bottom: 2px solid currentColor;
 }
 .main__image {
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
   aspect-ratio: 1/1;
+  outline: 2px solid currentColor;
 }
 .main__text {
   margin-inline: 25px;
   font-family: inherit;
-  font-variation-settings: "wght" var(--card-font-weight);
   font-size: 18px;
-  line-height: 1.18;
+  /* line-height: 1.18; */
 }
 .card__like-part {
   margin-inline-end: 30px;
@@ -161,7 +166,7 @@ button {
 
 .button {
   position: relative;
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid currentColor;
   transition: box-shadow 0.3s ease;
 }
 
@@ -195,13 +200,12 @@ button {
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--accent-color);
-  box-shadow: 2px 2px 0 currentColor;
+  outline: 2px solid currentColor;
 }
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -213,10 +217,15 @@ button {
   inline-size: 126px;
   min-block-size: 34px;
   background-color: var(--bg-color);
+  border: none;
+}
+.card__like-button:focus-visible, .footer__button:focus-visible{
+  box-shadow: 2px 2px 0px 2px currentColor;
+
 }
 .card__icon-button {
   block-size: 34px;
-  outline: 2px solid transparent;
+  /* outline: 2px solid transparent; */
   transition: outline 0.3s ease;
   border: none;
 }
@@ -224,7 +233,7 @@ button {
   outline: none;
 }
 .card__icon-button:focus-visible {
-  outline: 2px solid currentColor;
+  outline: none;
 }
 .footer__button {
   display: flex;
@@ -238,6 +247,11 @@ button {
   min-inline-size: 306px;
   inline-size: min(80dvi, 335px);
   background-color: var(--bg-color);
+  border: none;
+}
+
+.footer__button:focus, .card__like-button:focus {
+  outline: 2px solid currentColor;
 }
 .footer__svg {
   position: relative;

@@ -5,6 +5,8 @@
     --card-font-weight:465;
     --title-font-weight:785;
     --heart-border: #00CC14;
+    --bg-image: url(../svg/pattern-dark.svg);
+
 }
 .page.theme-light {
     --bg-color:#FFFFFF;
@@ -22,7 +24,7 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     .page {
     --bg-color:#000000;
     --main-color:#00CC14;
